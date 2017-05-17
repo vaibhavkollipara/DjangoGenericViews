@@ -26,7 +26,7 @@ Todo app to to demonstrate Django Generic views with rest api support
 
 ### Instructions
 Environment Setup
-* `cd AuthenticationDemo`
+* `cd DjangoGenericViews`
 * `pip install -r requirements.txt`
 * `python manage.py migrate`
 
