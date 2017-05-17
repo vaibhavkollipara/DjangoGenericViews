@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+                <div style="margin-bottom: 20px;" class="row">
+                <a class="btn btn-primary btn-block" href="{% url 'main:todolist' %}">Home</a>
+                </div>
+                <div class="card">
+                  <div class="card-block">
+                    <h4 class="card-title">{{todoitem.title}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{todoitem.date_created|date:"SHORT_DATE_FORMAT"}}</h6>
+                    <p class="card-text">{{ todoitem.description }}</p>
+                    <a class="btn btn-primary" href="{% url 'main:update' todoitem.pk %}">Modify</a>
+                    <form method="post" action="{% url 'main:delete' todoitem.pk %}" style="display: inline;">
+                        {% csrf_token %}
+                        <!-- <input type="hidden" name="todo_id" value="{{ item.pk }}"> -->
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>﻿
+                  </div>
+                </div>
+{% endblock %}
